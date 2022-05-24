@@ -1,7 +1,5 @@
 import { SignInButton } from '../SignInButton'
-import Link from 'next/link'
 import styles from './styles.module.scss'
-import { useRouter } from 'next/router'
 import { ActiveLink } from '../ActiveLink'
 
 export function Header() {
