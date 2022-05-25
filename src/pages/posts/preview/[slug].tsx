@@ -56,6 +56,8 @@ export default function PostPreview({ post }: PostPreview) {
 }
 
 export const getStaticPaths: GetStaticPaths = () => {
+  console.log('getStaticPaths')
+  
   return {
     paths: [],
     fallback: 'blocking'
@@ -63,6 +65,8 @@ export const getStaticPaths: GetStaticPaths = () => {
 }
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
+  console.log('getStaticProps')
+
   const { slug } = params
 
   const prismic = getPrismicClient()

@@ -4,11 +4,7 @@ import Router from 'next/router'
 import { getStripeJs } from '../../services/stripe-js'
 import styles from './styles.module.scss'
 
-interface SubscribeButtonProps {
-  priceId: string
-}
-
-export function SubscribeButton({ priceId }: SubscribeButtonProps) {
+export function SubscribeButton() {
   const { status, data } = useSession()
 
   async function handleSubscribe() {
@@ -18,7 +14,7 @@ export function SubscribeButton({ priceId }: SubscribeButtonProps) {
     }
     
 
-    if (data.activeSubscription) {
+    if (data?.activeSubscription) {
       Router.push('/posts')
       return
     }
